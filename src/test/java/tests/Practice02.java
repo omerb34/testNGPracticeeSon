@@ -31,7 +31,7 @@ public class Practice02 {
         Thread.sleep(5000);
         Assert.assertTrue(herokuPage.errorMessage.isDisplayed());
         Thread.sleep(5000);
-        //Driver.closeDriver();
+        Driver.closeDriver();
 
 
 
