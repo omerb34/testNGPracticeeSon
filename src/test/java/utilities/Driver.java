@@ -17,7 +17,9 @@ public class Driver {
      */
 
     static WebDriver driver;
-
+//private Driver(){
+//
+//}
     public static WebDriver getDriver() {
         if (driver == null) {//EĞER DRIVER'A DEĞER ATANMAMIŞSA DEĞER ATA, EĞER DEĞER ATANMIŞŞSA DRİVER'I AYNI SAYFADA RETURN ET
             switch (ConfigReader.getProperty("browser")) {
