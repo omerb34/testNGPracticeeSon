@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="Cross Tests Chrome">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="tests.Cross.CrossTest01">
+                <methods>
+                    <include name="test01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Chrome Tests Edge">
+        <parameter name="browser" value="Edge"></parameter>
+        <classes>
+        <class name="tests.Cross.CrossTest02">
+            <methods>
+                <include name="test02"/>
+            </methods>
+        </class>
+      </classes>
+    </test>
+</suite>

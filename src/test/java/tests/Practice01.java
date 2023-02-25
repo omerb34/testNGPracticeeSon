@@ -32,9 +32,10 @@ public class Practice01 {
                 dragAndDrop(obj.Copenhagen,obj.Denmark).perform();
     }
     }
-
-     //  Actions actions= new Actions(Driver.getDriver());
-     //  for (int i = 1; i <8 ; i++) {
-     //  actions.dragAndDrop(Driver.getDriver().findElement(By.id("box"+i)),
-        // Driver.getDriver().findElement(By.id("box10"+i))).perform();
-     //  }
+/*
+Actions actions= new Actions(Driver.getDriver());
+      for (int i = 1; i <8 ; i++) {
+      actions.dragAndDrop(Driver.getDriver().findElement(By.id("box"+i)),
+        Driver.getDriver().findElement(By.id("box10"+i))).perform();
+      }
+ */

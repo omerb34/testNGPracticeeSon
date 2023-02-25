@@ -7,22 +7,16 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 import java.time.Duration;
 
-public class Driver {
-    /*
-        Driver daki temel mantık extents yöntemiyle değil yani TestBase class'ına extent etmek yerine
-    Driver class'ından statik methodlar kullanarak driver oluştururuz.
-    1-İlk olarak public static WebDriver getDriver() methodu oluşturmak. Bu method bize bir driver getirecek
-    2-Driver'i kapatacağımız zaman da public static void closeDriver() methodu oluşturmak. İstediğimiz zaman
-    bu methodla driver'i kapatacağız
-     */
-
+public class CrossDriver {
     static WebDriver driver;
-private Driver(){
+    private CrossDriver(){
 
-}
-    public static WebDriver getDriver() {
+    }
+    public static WebDriver getDriver(String browser) {
+        browser=(browser==null) ? ConfigReader.getProperty("browser") :browser;
+        //yukarıdaki cod browsera bir deger atanmamısa calısmaktadır.
         if (driver == null) {//EĞER DRIVER'A DEĞER ATANMAMIŞSA DEĞER ATA, EĞER DEĞER ATANMIŞŞSA DRİVER'I AYNI SAYFADA RETURN ET
-            switch (ConfigReader.getProperty("browser")) {
+            switch (browser) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
@@ -33,8 +27,7 @@ private Driver(){
                     break;
             }
 
-            driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
         }
         return driver;
     }
